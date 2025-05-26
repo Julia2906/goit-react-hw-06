@@ -2,19 +2,19 @@ import css from './Contact.module.css';
 import { HiUser } from 'react-icons/hi';
 import { HiPhone } from 'react-icons/hi';
 
-const Contact = ({ name, number, onDelete }) => {
+const Contact = ({ contact, onDelete }) => {
   return (
     <div className={css.container}>
       <div>
         <p>
-          <HiUser /> {name}
+          <HiUser /> {contact.name}
         </p>
         <p>
-          <HiPhone /> {number}
+          <HiPhone /> {contact.number}
         </p>
       </div>
 
-      <button className={css.button} onClick={onDelete}>
+      <button className={css.button} onClick={() => onDelete(contact.id)}>
         Delete
       </button>
     </div>
